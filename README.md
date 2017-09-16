@@ -1,2 +1,8 @@
 # didactic-giggle
-Redis, Mailhog, MariaBD, PhpMyAdmin, Nginx, PHP7
+Docker setup using: 
+- Redis
+- Mailhog
+- MariaBD
+- PhpMyAdmin
+- Nginx
+- PHP7

@@ -1,0 +1,24 @@
+{
+	"name": "drigg-box",
+	"version": "3.1.22",
+	"description": "my awesome development",
+	"main": "gulpfile.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dnagyelek/nginx-engine.git"
+	},
+	"keywords": [
+		"nginx",
+		"box"
+	],
+	"author": "David",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/dnagyelek/nginx-engine/issues"
+	},
+	"homepage": "https://github.com/dnagyelek/nginx-engine#readme",
+	"devDependencies": {
+		"browser-sync": "^2.18.13",
+		"gulp": "^3.9.1"
+	}
+}
