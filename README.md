@@ -2,7 +2,7 @@
 
 Docker setup using: 
 - Redis
-- Mailhog
+- Mailhog 
 - MariaBD
 - PhpMyAdmin
 - Nginx
@@ -35,3 +35,26 @@ npm i
 sudo npm outdated -g
 
 sudo npm install package@latest -g
+
+## Run Docker and Gulp tasks
+docker-compose up -d && gulp
+
+# Servers
+
+## Dev
+https://docker.dev
+
+https://localhost
+
+## BrowserSync
+https://localhost:3001
+
+## PhpMyAdmin
+http://docker.dev:8080/
+
+http://localhost:8080/
+
+## Mailhog
+http://docker.dev:8025/
+
+http://localhost:8025/
