@@ -1,6 +1,17 @@
-# PhpStorm Project
+# IDEs
 .idea/
 
+# Persistence
+/data/*
+!/data/.gitkeep
+
+# Logs
+/logs/*
+!/logs/.gitkeep
+
+# Wordpress
+/wordpress/*
+!/wordpress/.gitkeep
 
 *.log
 wp-config.php
