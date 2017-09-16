@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', function () {
 
-	// init_watch(false, 3001, {target: 'http://juliehowardpartnership.box'});
+	// init_watch(false, 3001, {target: 'http://docker.dev');
 	init_watch(true, 3001, {target: 'https://docker.dev'});
 });
 

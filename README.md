@@ -39,6 +39,9 @@ sudo npm install package@latest -g
 ## Run Docker and Gulp tasks
 docker-compose up -d && gulp
 
+## Stop Docker
+docker-compose down
+
 # Servers
 
 ## Dev
