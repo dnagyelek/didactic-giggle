@@ -28,6 +28,12 @@ sudo chmod -R 777 wordpress
 
 define( 'FS_METHOD', 'direct' );
 
+/* define redis server */
+
+define( 'WP_REDIS_HOST', 'redis' );
+
+define( 'WP_CACHE', true );
+
 ## Install local Node.js modules
 npm i
 
