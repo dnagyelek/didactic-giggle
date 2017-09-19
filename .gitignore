@@ -14,4 +14,4 @@
 !/wordpress/.gitkeep
 
 # Other
-node_modules
+/node_modules/*

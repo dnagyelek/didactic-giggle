@@ -18,7 +18,7 @@ MySQL and PhpMyAdmin user and password setup
 docker-compose pull
 
 ## Get latest WP
-wget http://wordpress.org/latest.tar.gz && tar -xzvf latest.tar.gz 
+wget http://wordpress.org/latest.tar.gz && tar -xzvf latest.tar.gz && rm latest.tar.gz 
 
 ### Fix permissions problems
 
