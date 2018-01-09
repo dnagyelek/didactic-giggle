@@ -16,3 +16,12 @@
 # Other
 /node_modules/*
 /.env
+
+/images/
+!/images/.gitkeep
+
+/psd/
+!/psd/.gitkeep
+
+/fonts/
+!/fonts/.gitkeep
