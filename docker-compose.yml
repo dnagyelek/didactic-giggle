@@ -75,17 +75,3 @@ services:
     volumes:
       - "./wordpress:/var/www/html"
     restart: always
-
-#  browser-sync:
-#    image: ustwo/browser-sync
-#    container_name: browser-sync
-#    links:
-#      - nginx
-#    command: start --https --no-open --proxy "https://docker.dev:443" --files '**/*.css' --files '**/*.html'
-#    command: reload --url "https://docker.dev:443" --files '**/*.css' --files '**/*.html'
-#    volumes:
-#      - "./wordpress:/source"
-#    ports:
-#      - "3000:3000"
-#      - "3001:3001"
-#    restart: always
