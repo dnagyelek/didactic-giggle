@@ -1,4 +1,3 @@
-
 // fix memory leak warning
 require('events').EventEmitter.defaultMaxListeners = Infinity;
 
@@ -12,14 +11,14 @@ var gulp = require('gulp'),
 
 gulp.task('default', function () {
 
-	// init_watch(false, 3001, {target: 'http://docker.dev'});
-	init_watch(true, 3001, {target: 'https://docker.dev'});
+	init_watch(false, 3001, {target: 'http://docker.dev'});
+	// init_watch(true, 3001, {target: 'https://docker.dev'});
 });
 
 function init_watch(https, port, proxy) {
 
 	var defaults = {
-		port: 3001,
+		port: 3001
 	};
 	if (typeof https !== 'boolean') {
 		https = defaults.https;
