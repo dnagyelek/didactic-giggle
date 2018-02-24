@@ -1,6 +1,3 @@
-/**
- * Created by Work on 10/26/2016.
- */
 
 // fix memory leak warning
 require('events').EventEmitter.defaultMaxListeners = Infinity;
