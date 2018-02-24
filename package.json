@@ -1,24 +1,30 @@
 {
-	"name": "drigg-box",
-	"version": "3.1.22",
-	"description": "my awesome development",
-	"main": "gulpfile.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/dnagyelek/nginx-engine.git"
-	},
-	"keywords": [
-		"nginx",
-		"box"
-	],
-	"author": "David",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/dnagyelek/nginx-engine/issues"
-	},
-	"homepage": "https://github.com/dnagyelek/nginx-engine#readme",
-	"devDependencies": {
-		"browser-sync": "^2.18.13",
-		"gulp": "^3.9.1"
-	}
+  "name": "drigg-box",
+  "version": "3.1.25",
+  "description": "my awesome development",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnagyelek/nginx-engine.git"
+  },
+  "keywords": [
+    "nginx",
+    "box"
+  ],
+  "author": "David",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnagyelek/nginx-engine/issues"
+  },
+  "homepage": "https://github.com/dnagyelek/nginx-engine#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "browser-sync": "^2.23.6",
+    "csso": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "postcss-csso": "^3.0.0"
+  }
 }
