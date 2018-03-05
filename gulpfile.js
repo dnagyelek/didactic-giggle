@@ -6,15 +6,18 @@ var gulp = require('gulp'),
 		sass = require('gulp-sass'),
 		postcss = require('gulp-postcss'),
 		autoprefixer = require('autoprefixer'),
-		//		cssnano = require('cssnano'),
 		csso = require('postcss-csso'),
-//		csswring = require('csswring'),
 		plumber = require('gulp-plumber'),
-//		notify = require("gulp-notify"),
+
 		// your-expected-site-name
+
+		// OpenCart
+		// watch_path = './opencart/upload/',
+		// browser_sync = watch_path + 'catalog/view/theme';
+
+		// WP
 		watch_path = './wordpress/wp-content/',
-		// change site-theme
-		browser_sync = watch_path + 'themes/pendock/';
+		browser_sync = watch_path + 'themes/';
 
 
 gulp.task('serve', ['sass'], function () {
@@ -22,19 +25,22 @@ gulp.task('serve', ['sass'], function () {
 	browserSync.init({
 		proxy: "http://docker.dev",
 		notify: false,
-		open: false, // no new browser tab
+		open: false // no new browser tab
 	});
 
 	gulp.watch(browser_sync + "/**/*.scss", ['sass']);
+
+	// OpenCart
+//	gulp.watch(browser_sync + "/**/*.tpl").on('change', browserSync.reload);
+
+	// WP
 	gulp.watch(browser_sync + "/**/*.php").on('change', browserSync.reload);
 });
 
 gulp.task('sass', function () {
 	var plugins = [
 		autoprefixer(),
-//		cssnano(), // good
-		csso(),    // old best
-//		csswring(), // new best
+		csso()    // old best
 	];
 	return gulp.src(browser_sync + "/**/*.scss", {base: browser_sync})
 			.pipe(plumber())
