@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dnagyelek/nginx-engine.git"
+    "url": "git+https://github.com/dnagyelek/didactic-giggle.git"
   },
   "keywords": [
     "nginx",
@@ -14,9 +14,9 @@
   "author": "David",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dnagyelek/nginx-engine/issues"
+    "url": "https://github.com/dnagyelek/didactic-giggle/issues"
   },
-  "homepage": "https://github.com/dnagyelek/nginx-engine#readme",
+  "homepage": "https://github.com/dnagyelek/didactic-giggle#readme",
   "devDependencies": {
     "autoprefixer": "^8.1.0",
     "browser-sync": "^2.23.6",
