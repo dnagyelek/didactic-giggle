@@ -7,18 +7,19 @@ var gulp = require('gulp'),
 		postcss = require('gulp-postcss'),
 		autoprefixer = require('autoprefixer'),
 		csso = require('postcss-csso'),
+//		uncss = require('postcss-uncss'),
+		uncss = require('gulp-uncss'),
+		mqpacker = require("css-mqpacker"),
 		plumber = require('gulp-plumber'),
 
 		// your-expected-site-name
-
-		// OpenCart
-		// watch_path = './opencart/upload/',
-		// browser_sync = watch_path + 'catalog/view/theme';
-
-		// WP
 		watch_path = './wordpress/wp-content/',
-		browser_sync = watch_path + 'themes/';
+		// change site-theme
+		browser_sync_theme = watch_path + 'themes/',
+		browser_sync_sass = browser_sync_theme + 'voalu/',
+		browser_sync_plugin = watch_path + 'plugins/';
 
+gulp.task('default', ['serve']);
 
 gulp.task('serve', ['sass'], function () {
 
@@ -28,29 +29,40 @@ gulp.task('serve', ['sass'], function () {
 		open: false // no new browser tab
 	});
 
-	gulp.watch(browser_sync + "/**/*.scss", ['sass']);
+	// WP Sass
+	gulp.watch(browser_sync_sass + "/**/*.scss", ['sass']);
+
+	// WP Themes
+	gulp.watch(browser_sync_theme + "/**/*.php").on('change', browserSync.reload);
+
+	// WP Plugins
+	gulp.watch(browser_sync_plugin + "/**/*.php").on('change', browserSync.reload);
 
 	// OpenCart
 //	gulp.watch(browser_sync + "/**/*.tpl").on('change', browserSync.reload);
 
-	// WP
-	gulp.watch(browser_sync + "/**/*.php").on('change', browserSync.reload);
+
 });
 
 gulp.task('sass', function () {
 	var plugins = [
 		autoprefixer(),
-		csso()    // old best
+		csso(),    // old best
+		mqpacker({
+			sort: true
+		})
 	];
-	return gulp.src(browser_sync + "/**/*.scss", {base: browser_sync})
+	return gulp.src(browser_sync_sass + "/**/*.scss", {base: browser_sync_sass})
 			.pipe(plumber())
 			//			.pipe(sass())
 			.pipe(sass().on('error', sass.logError))
+			.pipe(uncss({
+				html: ['https://dralb.co.uk/find-a-used-car'],
+				ignore: ['#toc ']
+			}))
 			.pipe(postcss(plugins))
 			.pipe(gulp.dest(function (file) {
 				return file.base;
 			}))
 			.pipe(browserSync.stream());
 });
-
-gulp.task('default', ['serve']);
