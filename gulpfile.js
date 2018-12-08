@@ -13,6 +13,10 @@ var gulp = require('gulp'),
 //      next best thing
 //      critical = require('critical'),
 
+		// OpenCart
+		// watch_path = './opencart/upload/',
+		// browser_sync = watch_path + 'catalog/view/theme';
+		// WP
 		// your-expected-site-name
 		watch_path = './wordpress/wp-content/',
 		// change site-theme
