@@ -56,7 +56,10 @@ services:
       NGINX_BACKEND_HOST: phpfpm
       NGINX_SERVER_ROOT: /var/www/html
     volumes:
+#   WP
       - "./wordpress:/var/www/html"
+#   OC
+#     - "./opencart/upload:/var/www/html"
       - "./config/nginx/default.conf:/etc/nginx/conf.d/default.conf"
       - "./config/nginx/nginx.conf:/etc/nginx/nginx.conf"
       - "./config/certs:/etc/nginx/certs"
@@ -67,8 +70,6 @@ services:
     restart: always
 
   phpfpm: # to build !!!
-#   image: wodby/base-php:7.0.23 !works
-#   image: wodby/php:7.1 # works
     image: wodby/php:7.2 # works
     container_name: phpfpm
     environment:
@@ -76,16 +77,3 @@ services:
     volumes:
       - "./wordpress:/var/www/html"
     restart: always
-
-#  elasticsearch:
-#    image: elasticsearch:alpine
-#    container_name: elasticsearch
-#    volumes:
-#      - "./config/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro" # config
-#      - "./data/elasticsearch:/usr/share/elasticsearch/data" # data
-#    environment:
-#      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
-#    ports:
-#      - "9200:9200"
-#      - "9300:9300"
-#    restart: always
