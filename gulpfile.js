@@ -69,7 +69,7 @@ gulp.task('sass', function () {
 			// disable on development
 			// will slow down
 			.pipe(uncss({
-				html: ['https://albguru.info/awesome-wedding-invitations'],
+				html: ['https://docker.dev'],
 				ignore: ['#toc ']
 			}))
 			.pipe(postcss(plugins))
