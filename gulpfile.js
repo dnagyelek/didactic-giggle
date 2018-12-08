@@ -10,6 +10,8 @@ var gulp = require('gulp'),
 		uncss = require('gulp-uncss'),
 		mqpacker = require("css-mqpacker"),
 		plumber = require('gulp-plumber'),
+//      next best thing
+//      critical = require('critical'),
 
 		// your-expected-site-name
 		watch_path = './wordpress/wp-content/',
@@ -46,6 +48,11 @@ gulp.task('serve', ['sass'], function () {
 gulp.task('sass', function () {
 	var plugins = [
 		autoprefixer(),
+		// not working
+/*		uncss({
+			html: ['https://albguru.info/awesome-wedding-invitations'],
+			ignore: ['#toc ']
+		}),*/
 		csso(),    // old best
 		mqpacker({
 			sort: true
@@ -55,8 +62,10 @@ gulp.task('sass', function () {
 			.pipe(plumber())
 			//			.pipe(sass())
 			.pipe(sass().on('error', sass.logError))
+			// disable on development
+			// will slow down
 			.pipe(uncss({
-				html: ['https://dralb.co.uk/find-a-used-car'],
+				html: ['https://albguru.info/awesome-wedding-invitations'],
 				ignore: ['#toc ']
 			}))
 			.pipe(postcss(plugins))
