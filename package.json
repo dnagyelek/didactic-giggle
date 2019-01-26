@@ -18,19 +18,20 @@
   },
   "homepage": "https://github.com/dnagyelek/didactic-giggle#readme",
   "devDependencies": {
-    "autoprefixer": "^9.1.5",
-    "browser-sync": "^2.24.7",
+    "autoprefixer": "^9.4.6",
+    "browser-sync": "^2.26.3",
     "css-mqpacker": "^7.0.0",
     "csso": "^3.5.1",
     "gulp": "^3.9.1",
-    "gulp-plumber": "^1.2.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^4.0.2",
     "gulp-uncss": "^1.0.6",
     "postcss-csso": "^3.0.0"
   },
   "dependencies": {
     "fstream": "^1.0.11",
-    "graceful-fs": "^4.1.11"
+    "graceful-fs": "^4.1.15",
+    "natives": "^1.1.6"
   }
 }
