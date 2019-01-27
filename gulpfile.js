@@ -7,9 +7,11 @@ var gulp = require('gulp'),
 		postcss = require('gulp-postcss'),
 		autoprefixer = require('autoprefixer'),
 		csso = require('postcss-csso'),
-		uncss = require('gulp-uncss'),
+
 		mqpacker = require("css-mqpacker"),
 		plumber = require('gulp-plumber'),
+
+		uncss = require('gulp-uncss'),
 //      next best thing
 //      critical = require('critical'),
 
@@ -29,7 +31,7 @@ gulp.task('default', ['serve']);
 gulp.task('serve', ['sass'], function () {
 
 	browserSync.init({
-		proxy: "http://docker.dev",
+		proxy: "http://docker.local",
 		notify: false,
 		open: false // no new browser tab
 	});
@@ -69,9 +71,9 @@ gulp.task('sass', function () {
 			// disable on development
 			// will slow down
 			.pipe(uncss({
-				html: ['https://albguru.info/awesome-wedding-invitations'],
+				html: ['http://docker.local/automatic-roller-garage-doors'],
 				ignore: ['#toc ']
-			}))
+			 }))
 			.pipe(postcss(plugins))
 			.pipe(gulp.dest(function (file) {
 				return file.base;
