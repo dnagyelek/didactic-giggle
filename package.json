@@ -1,37 +1,37 @@
 {
-  "name": "docker.dev",
-  "version": "3.1.32",
-  "description": "my awesome development",
-  "main": "gulpfile.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dnagyelek/didactic-giggle.git"
-  },
-  "keywords": [
-    "nginx",
-    "box"
-  ],
-  "author": "David",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dnagyelek/didactic-giggle/issues"
-  },
-  "homepage": "https://github.com/dnagyelek/didactic-giggle#readme",
-  "devDependencies": {
-    "autoprefixer": "^9.4.6",
-    "browser-sync": "^2.26.3",
-    "css-mqpacker": "^7.0.0",
-    "csso": "^3.5.1",
-    "gulp": "^3.9.1",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-uncss": "^1.0.6",
-    "postcss-csso": "^3.0.0"
-  },
-  "dependencies": {
-    "fstream": "^1.0.11",
-    "graceful-fs": "^4.1.15",
-    "natives": "^1.1.6"
-  }
+	"name": "docker.dev",
+	"version": "3.1.32",
+	"description": "my awesome development",
+	"main": "gulpfile.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dnagyelek/didactic-giggle.git"
+	},
+	"keywords": [
+		"nginx",
+		"box"
+	],
+	"author": "David",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/dnagyelek/didactic-giggle/issues"
+	},
+	"homepage": "https://github.com/dnagyelek/didactic-giggle#readme",
+	"devDependencies": {
+		"autoprefixer": "^9.4.6",
+		"browser-sync": "^2.26.3",
+		"css-mqpacker": "^7.0.0",
+		"gulp": "^3.9.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-postcss": "^8.0.0",
+		"gulp-sass": "^4.0.2",
+		"postcss-csso": "^3.0.0",
+		"postcss-uncss": "^0.16.1"
+	},
+	"dependencies": {
+		"fstream": "^1.0.11",
+		"graceful-fs": "^4.1.15",
+		"natives": "^1.1.6",
+		"uncss": "^0.16.2"
+	}
 }

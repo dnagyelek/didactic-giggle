@@ -70,7 +70,7 @@ services:
     restart: always
 
   phpfpm: # to build !!!
-    image: wodby/php:7.2 # works
+    image: wodby/php:7.3 # works
     container_name: phpfpm
     environment:
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025 # works on wodby

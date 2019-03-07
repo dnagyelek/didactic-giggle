@@ -51,16 +51,16 @@ docker-compose down
 # Servers
 
 ## Dev
-- <https://docker.dev>
-- <https://localhost>
+- <http://docker.local>
+- <http://localhost>
 
 ## BrowserSync
 - <https://localhost:3001>
 
 ## PhpMyAdmin
-- <http://docker.dev:8080>
+- <http://docker.local:8080>
 - <http://localhost:8080>
 
 ## Mailhog
-- <http://docker.dev:8025>
+- <http://docker.local:8025>
 - <http://localhost:8025>

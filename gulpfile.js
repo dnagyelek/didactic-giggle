@@ -2,17 +2,21 @@
 require('events').EventEmitter.defaultMaxListeners = Infinity;
 
 var gulp = require('gulp'),
+		plumber = require('gulp-plumber'),
 		browserSync = require('browser-sync'),
 		sass = require('gulp-sass'),
 		postcss = require('gulp-postcss'),
+		// gulp plugins
 		autoprefixer = require('autoprefixer'),
 		csso = require('postcss-csso'),
-
 		mqpacker = require("css-mqpacker"),
-		plumber = require('gulp-plumber'),
+		// uncss gulp plugin version
+		uncss = require('postcss-uncss'),
 
-		uncss = require('gulp-uncss'),
-//      next best thing
+		// uncss pipe version
+//		uncss = require('gulp-uncss'),
+
+		//      next best thing
 //      critical = require('critical'),
 
 		// OpenCart
@@ -23,7 +27,7 @@ var gulp = require('gulp'),
 		watch_path = './wordpress/wp-content/',
 		// change site-theme
 		browser_sync_theme = watch_path + 'themes/',
-		browser_sync_sass = browser_sync_theme + 'voalu/',
+		browser_sync_sass = browser_sync_theme + 'kreon/',
 		browser_sync_plugin = watch_path + 'plugins/';
 
 gulp.task('default', ['serve']);
@@ -54,9 +58,8 @@ gulp.task('serve', ['sass'], function () {
 gulp.task('sass', function () {
 	var plugins = [
 		autoprefixer(),
-		// not working
 /*		uncss({
-			html: ['https://albguru.info/awesome-wedding-invitations'],
+			html: ['http://docker.local/automatic-roller-garage-doors'],
 			ignore: ['#toc ']
 		}),*/
 		csso(),    // old best
@@ -66,14 +69,7 @@ gulp.task('sass', function () {
 	];
 	return gulp.src(browser_sync_sass + "/**/*.scss", {base: browser_sync_sass})
 			.pipe(plumber())
-			//			.pipe(sass())
 			.pipe(sass().on('error', sass.logError))
-			// disable on development
-			// will slow down
-			.pipe(uncss({
-				html: ['http://docker.local/automatic-roller-garage-doors'],
-				ignore: ['#toc ']
-			 }))
 			.pipe(postcss(plugins))
 			.pipe(gulp.dest(function (file) {
 				return file.base;
