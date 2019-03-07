@@ -1,7 +1,7 @@
 {
-	"name": "docker.dev",
-	"version": "3.1.32",
-	"description": "my awesome development",
+	"name": "docker.local",
+	"version": "4.1.32",
+	"description": "my next development",
 	"main": "gulpfile.js",
 	"repository": {
 		"type": "git",
