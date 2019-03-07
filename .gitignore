@@ -15,7 +15,7 @@
 
 # Other
 /node_modules/*
-/.env
+*.env
 
 /images/
 !/images/.gitkeep
