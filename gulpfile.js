@@ -9,6 +9,7 @@ const gulp = require('gulp'),
 		// gulp plugins
 		autoprefixer = require('autoprefixer'),
 		csso = require('postcss-csso'),
+		merge_rules = require("postcss-merge-rules"),           // optional
 		mqpacker = require("css-mqpacker"),
 
 		// uncss gulp plugin version
