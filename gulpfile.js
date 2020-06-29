@@ -1,24 +1,25 @@
 // fix memory leak warning
 require('events').EventEmitter.defaultMaxListeners = Infinity;
 
-var gulp = require('gulp'),
+const gulp = require('gulp'),
 		plumber = require('gulp-plumber'),
-		browserSync = require('browser-sync'),
+		watch = require('gulp-watch'),
 		sass = require('gulp-sass'),
 		postcss = require('gulp-postcss'),
 		// gulp plugins
 		autoprefixer = require('autoprefixer'),
 		csso = require('postcss-csso'),
 		mqpacker = require("css-mqpacker"),
-		// uncss gulp plugin version
-		uncss = require('postcss-uncss'),
 
+		// uncss gulp plugin version
+//		uncss = require('postcss-uncss'),
 		// uncss pipe version
 //		uncss = require('gulp-uncss'),
 
 		//      next best thing
 //      critical = require('critical'),
 
+		browserSync = require('browser-sync').create(),
 		// OpenCart
 		// watch_path = './opencart/upload/',
 		// browser_sync = watch_path + 'catalog/view/theme';
@@ -30,49 +31,62 @@ var gulp = require('gulp'),
 		browser_sync_sass = browser_sync_theme + 'kreon/',
 		browser_sync_plugin = watch_path + 'plugins/';
 
-gulp.task('default', ['serve']);
-
-gulp.task('serve', ['sass'], function () {
+function server() {
 
 	browserSync.init({
 		proxy: "http://docker.local",
+		https: true,
 		notify: false,
 		open: false // no new browser tab
 	});
 
 	// WP Sass
-	gulp.watch(browser_sync_sass + "/**/*.scss", ['sass']);
+	watch(browser_sync_sass + '/**/*.scss').on('change', css);
 
+	// WP Themes + WP Plugins
 	// WP Themes
-	gulp.watch(browser_sync_theme + "/**/*.php").on('change', browserSync.reload);
+	watch(browser_sync_theme + "/**/*.php").on('change', browserSync.reload);
 
 	// WP Plugins
-	gulp.watch(browser_sync_plugin + "/**/*.php").on('change', browserSync.reload);
+	watch(browser_sync_plugin + "/**/*.php").on('change', browserSync.reload);
 
 	// OpenCart
-//	gulp.watch(browser_sync + "/**/*.tpl").on('change', browserSync.reload);
+	// watch(browser_sync + "/**/*.tpl").on('change', browserSync.reload);
 
+}
 
-});
-
-gulp.task('sass', function () {
-	var plugins = [
+// Sass tasks
+function css() {
+	const plugins = [
 		autoprefixer(),
-/*		uncss({
-			html: ['http://docker.local/automatic-roller-garage-doors'],
-			ignore: ['#toc ']
-		}),*/
+		/*		uncss({
+					html: ['http://docker.local/automatic-roller-garage-doors'],
+					ignore: ['#toc ']
+				}),*/
+		// unique_selectors(),  // optional
+		merge_rules(),       // optional
 		csso(),    // old best
 		mqpacker({
 			sort: true
 		})
 	];
-	return gulp.src(browser_sync_sass + "/**/*.scss", {base: browser_sync_sass})
+	return gulp
+			.src(browser_sync_sass + "/**/*.scss", {base: browser_sync_sass})
 			.pipe(plumber())
 			.pipe(sass().on('error', sass.logError))
+			// will slow down
+			/*			.pipe(uncss({
+							html: ['http://docker.local/automatic-roller-garage-doors'],
+							ignore: ['#toc ']
+						 }))*/
 			.pipe(postcss(plugins))
 			.pipe(gulp.dest(function (file) {
 				return file.base;
 			}))
 			.pipe(browserSync.stream());
-});
+}
+
+exports.css = css;
+
+exports.default = server;
+
