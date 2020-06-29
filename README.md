@@ -21,6 +21,10 @@ npm-upgrade
 ## Install local Node.js modules
 npm i
 
+### Find outdated global packages and install them
+sudo npm outdated -g
+sudo npm install package@latest -g
+
 ## Update local images
 docker-compose pull
 
@@ -42,14 +46,6 @@ define( 'FS_METHOD', 'direct' );
 define( 'WP_REDIS_HOST', 'redis' );
 
 define( 'WP_CACHE', true );
-
-## Install local Node.js modules
-npm i
-
-### Find outdated packages and install them
-sudo npm outdated -g
-
-sudo npm install package@latest -g
 
 ## Run Docker and Gulp tasks
 docker-compose up -d && gulp
