@@ -26,6 +26,7 @@
 		"gulp-postcss": "^8.0.0",
 		"gulp-sass": "^4.1.0",
 		"postcss-csso": "^4.0.0",
+		"postcss-merge-rules": "^4.0.3",
 		"postcss-uncss": "^0.17.0"
 	},
 	"dependencies": {
