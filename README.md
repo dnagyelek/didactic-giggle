@@ -1,24 +1,33 @@
 # didactic-giggle
 
-Docker setup using: 
+Docker setup using:
 - Redis
-- Mailhog 
+- Mailhog
 - MariaBD
 - PhpMyAdmin
 - Nginx
-- PHP7
-
-Can be used for Wordpress development, but is not exclusive.
+- PHP 7.4
 
 ## Initial config
 docker-compose.yml
 MySQL and PhpMyAdmin user and password setup
 
+### Find outdated packages and install them
+npm outdated
+
+## Upgrade all dependencies
+npm-upgrade
+
+## Install local Node.js modules
+npm i
+
 ## Update local images
 docker-compose pull
 
 ## Get latest WP
-wget http://wordpress.org/latest.tar.gz && tar -xzvf latest.tar.gz && rm latest.tar.gz 
+wget http://wordpress.org/latest.tar.gz && tar -xzvf latest.tar.gz && rm latest.tar.gz
+
+wget https://wordpress.org/wordpress-4.9.15.tar.gz && tar -xzf wordpress-4.9.15.tar.gz && rm wordpress-4.9.15.tar.gz
 
 ### Fix permissions problems
 
@@ -55,7 +64,7 @@ docker-compose down
 - <http://localhost>
 
 ## BrowserSync
-- <https://localhost:3001>
+- <http://localhost:3001>
 
 ## PhpMyAdmin
 - <http://docker.local:8080>
