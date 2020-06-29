@@ -1,6 +1,6 @@
 {
 	"name": "docker.local",
-	"version": "4.1.32",
+	"version": "5.0.10",
 	"description": "my next development",
 	"main": "gulpfile.js",
 	"repository": {
